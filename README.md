@@ -91,17 +91,19 @@ Despite these challenges, our model was able to converge quickly, taking only 30
 | a blue and red pokemon 700        | ![Step 700 Image](./data/imagen_700.png) |
 | a blue and red pokemon 800        | ![Step 800 Image](./data/imagen_800.png) |
 
+We think the quality of Imagen generated image is better than our previous results from GigaGAN, even in a very early training stage. One could think these images look more complete than the previous results, thus some extent more like a Pokemon.
+
+
 | Text Prompt (text scale) | Image |
 |:-------------:|:-----:|
 | a drawing of a green pokemon with red eyes (0.1)        | ![text scale = 0.1](./data/text_scale_0.1.png) |
 | a drawing of a green pokemon with red eyes (3.0)       | ![text scale = 3.0](./data/text_scale_3.0.png) |
 | a drawing of a green pokemon with red eyes (5.0)       | ![text scale = 5.0](./data/text_scale_5.0.png) |
-<!-- | a drawing of a green pokemon with red eyes 800        | ![Step 800 Image](./data/imagen_800.png) | -->
 
-We could notice that with add more strength to the text scale, it starts to align with the text in some extent. Like when it is 0.1, it is just green. When add to 3.0, it shows a color (yellow = blue + red). When add to 5.0, it shows a blend with yellow and green, thus we assume it catchs more information from the content step by step.
+We could notice that with add more strength to the text scale, it starts to align with the text in some extent. Like when it is 0.1, it is just green. When add to 3.0, it shows a color (<span style="color:yellow">yellow</span> = <span style="color:blue">blue</span> + <span style="color:red">red</span>). When add to 5.0, it shows a blend with yellow and green, thus we assume it catchs more information from the content step by step.
 
 
-<span style="color:blue">some *blue* text</span>.
+<!-- <span style="color:blue">some *blue* text</span>. -->
 
 ## Future Work 💡
 
