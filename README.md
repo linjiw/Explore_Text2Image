@@ -2,11 +2,11 @@
 
 ## Introduction
 
-In this project, we aim to implement an **Image Generation** model based on the **MinImagen** architecture [^1^]. MinImagen is a text-to-image generation model that is efficient and generates high-quality images from textual descriptions. Our goal is to experiment with this model and share our findings and experiences.
+In this project, we aim to implement an **Image Generation** model based on the [**MinImagen**][1](https://github.com/AssemblyAI-Examples/MinImagen) architecture. MinImagen is a text-to-image generation model that is efficient and generates high-quality images from textual descriptions. Our goal is to experiment with this model and share our findings and experiences.
 
 ## Implementation
 
-We began by implementing the **MinImagen** model using the resources provided by AssemblyAI [^2^]. The key component of this implementation is the **Diffusion** part, which has the following characteristics:
+We began by implementing the **MinImagen** model using the resources provided by AssemblyAI [2]. The key component of this implementation is the **Diffusion** part, which has the following characteristics:
 
 - Training is fast ⚡
 - Sample image generation is slow 🐢
@@ -37,5 +37,5 @@ We plan to add a **super resolution layer** in the future to further improve our
 
 Our project on implementing and experimenting with the MinImagen architecture for text-to-image generation has been successful. We were able to generate meaningful images from textual descriptions, overcoming challenges related to model size and training resources. We hope that our experience and findings can help others working on similar projects. 😃
 
-[^1^]: MinImagen: Build Your Own Imagen Text-to-Image Model (https://www.assemblyai.com/blog/minimagen-build-your-own-imagen-text-to-image-model/)
-[^2^]: AssemblyAI-Examples/MinImagen GitHub Repository (https://github.com/AssemblyAI-Examples/MinImagen?ref=assemblyai.com)
+[1]: MinImagen: Build Your Own Imagen Text-to-Image Model (https://www.assemblyai.com/blog/minimagen-build-your-own-imagen-text-to-image-model/)
+[2]: AssemblyAI-Examples/MinImagen GitHub Repository (https://github.com/AssemblyAI-Examples/MinImagen?ref=assemblyai.com)
