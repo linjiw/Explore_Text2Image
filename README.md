@@ -102,6 +102,8 @@ We think the quality of Imagen generated image is better than our previous resul
 
 We could notice that with add more strength to the text scale, it starts to align with the text in some extent. Like when it is 0.1, it is just green. When add to 3.0, it shows a yellow color, which might be some blending information from "blue" and "red". When add to 5.0, it shows a blend with yellow and green, thus we assume it catchs more information from the content step by step.
 
+When text scale = 5.0, we could notice that the image quality is not good and has a lot of noise on the white background. This is due to the text scale is too high that we force the network to focus more on the text information, but not the quality side.
+
 
 <!-- <span style="color:blue">some *blue* text</span>. -->
 
