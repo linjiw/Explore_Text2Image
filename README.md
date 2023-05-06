@@ -1,10 +1,6 @@
 # Project Report: Test 2 Image Generating Task 🎨🖼️
 
 ![Imagen Architechture](./data/Imagen_model_structure.png "Imagen Model")
-<figure>
-  <img src="https://www.example.com/image.jpg" alt="Alt text" title="Optional title">
-  <figcaption>Here is the caption for the image.</figcaption>
-</figure>
 
 
 ## Introduction
@@ -24,17 +20,88 @@ We began by implementing the **MinImagen** model using the resources provided by
 
 ### Dataset
 
-We used the **HuggingFace Pokémon caption dataset** 🐾 as the basis for our image generation task. We edited the dataloader and dataset functions to make them compatible with our implementation.
+We used the [**HuggingFace lambdalabs/pokemon-blip-captions dataset**](https://huggingface.co/datasets/lambdalabs/pokemon-blip-captions)🐾 as the basis for our image generation task. We edited the dataloader and dataset functions to make them compatible with our implementation.
+
+![Pokemon Dataset](data/pokemon_data_set.png "Pokemon Dataset")
 
 ### Experimentation
 
 During the experimentation phase, we encountered some challenges:
 
-1. **Model Size**: The original model was too large to fit into a 12GB GPU for training, even with a batch size of 1.
+1. **Model Size**: The original model with super resolution was too large to fit into a 12GB GPU for training, even with a batch size of 1.
 2. **Logging**: We used **Weights & Biases (wandb)** for logging our training process.
-3. **Super Resolution**: Due to the model's large size, we had to remove the super resolution layer for training.
+
+![Imagen Training](data/Imagen_training.png "Validation Loss")
+
+3. **Remove Super Resolution**: Due to the model's large size, we had to remove the super resolution layer for training.
+
+```json
+// Training parameters
+{
+    "text_embed_dim": null,
+    "channels": 3,
+    "timesteps": 1000,
+    "cond_drop_prob": 0.15,
+    "loss_type": "l2",
+    "lowres_sample_noise_level": 0.2,
+    "auto_normalize_img": true,
+    "dynamic_thresholding_percentile": 0.9,
+    "only_train_unet_number": null,
+    "image_sizes": [
+        64
+    ],
+    "text_encoder_name": "t5_small"
+}
+// Model Size
+{
+    "dim": 128,
+    "dim_mults": [
+        1,
+        2,
+        4
+    ],
+    "channels": 3,
+    "channels_out": null,
+    "cond_dim": null,
+    "text_embed_dim": 512,
+    "num_resnet_blocks": 1,
+    "layer_attns": [
+        false,
+        true,
+        true
+    ],
+    "layer_cross_attns": [
+        false,
+        true,
+        true
+    ],
+    "attn_heads": 8,
+    "lowres_cond": false,
+    "memory_efficient": false,
+    "attend_at_middle": false
+}
+```
 
 Despite these challenges, our model was able to converge quickly, taking only 300 epochs with a batch size of 2 and a time step of 1000 to generate meaningful images. 🌟
+
+| Training Step | Image |
+|:-------------:|:-----:|
+| a blue and red pokemon 500        | ![Step 500 Image](./data/imagen_500.png) |
+| a blue and red pokemon 600        | ![Step 600 Image](./data/imagen_600.png) |
+| a blue and red pokemon 700        | ![Step 700 Image](./data/imagen_700.png) |
+| a blue and red pokemon 800        | ![Step 800 Image](./data/imagen_800.png) |
+
+| Text Prompt (text scale) | Image |
+|:-------------:|:-----:|
+| a drawing of a green pokemon with red eyes (0.1)        | ![text scale = 0.1](./data/text_scale_0.1.png) |
+| a drawing of a green pokemon with red eyes (3.0)       | ![text scale = 3.0](./data/text_scale_3.0.png) |
+| a drawing of a green pokemon with red eyes (5.0)       | ![text scale = 5.0](./data/text_scale_5.0.png) |
+<!-- | a drawing of a green pokemon with red eyes 800        | ![Step 800 Image](./data/imagen_800.png) | -->
+
+We could notice that with add more strength to the text scale, it starts to align with the text in some extent. Like when it is 0.1, it is just green. When add to 3.0, it shows a color (yellow = blue + red). When add to 5.0, it shows a blend with yellow and green, thus we assume it catchs more information from the content step by step.
+
+
+<span style="color:blue">some *blue* text</span>.
 
 ## Future Work 💡
 
