@@ -1,19 +1,26 @@
 # Project Report: Test 2 Image Generating Task 🎨🖼️
 
+![Imagen Architechture](./data/Imagen_model_structure.png "Imagen Model")
+<figure>
+  <img src="https://www.example.com/image.jpg" alt="Alt text" title="Optional title">
+  <figcaption>Here is the caption for the image.</figcaption>
+</figure>
+
+
 ## Introduction
 
 In this project, we aim to implement an **Image Generation** model based on the [**MinImagen**][1](https://github.com/AssemblyAI-Examples/MinImagen) architecture. MinImagen is a text-to-image generation model that is efficient and generates high-quality images from textual descriptions. Our goal is to experiment with this model and share our findings and experiences.
 
 ## Implementation
 
-We began by implementing the **MinImagen** model using the resources provided by AssemblyAI [2]. The key component of this implementation is the **Diffusion** part, which has the following characteristics:
+We began by implementing the **MinImagen** model using the resources provided by **AssemblyAI** [2]. The key component of this implementation is the **Diffusion** part, which has the following characteristics compared with the **GigaGAN** in our training environment.:
 
 - Training is fast ⚡
 - Sample image generation is slow 🐢
 - Convergence is fast 🏃
 - Generated results are more meaningful 🎯
 
-Another important feature of our implementation is the **classifier-free guidance** for text conditioning. This means that we don't need to rely on a separate classifier to guide the image generation process.
+<!-- Another important feature of our implementation is the **classifier-free guidance** for text conditioning. This means that we don't need to rely on a separate classifier to guide the image generation process. -->
 
 ### Dataset
 
