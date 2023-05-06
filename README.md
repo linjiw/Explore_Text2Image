@@ -100,7 +100,7 @@ We think the quality of Imagen generated image is better than our previous resul
 | a drawing of a green pokemon with red eyes (3.0)       | ![text scale = 3.0](./data/text_scale_3.0.png) |
 | a drawing of a green pokemon with red eyes (5.0)       | ![text scale = 5.0](./data/text_scale_5.0.png) |
 
-We could notice that with add more strength to the text scale, it starts to align with the text in some extent. Like when it is 0.1, it is just green. When add to 3.0, it shows a color (<span style="color:yellow">yellow</span> = <span style="color:blue">blue</span> + <span style="color:red">red</span>). When add to 5.0, it shows a blend with yellow and green, thus we assume it catchs more information from the content step by step.
+We could notice that with add more strength to the text scale, it starts to align with the text in some extent. Like when it is 0.1, it is just green. When add to 3.0, it shows a yellow color, which might be some blending information from "blue" and "red". When add to 5.0, it shows a blend with yellow and green, thus we assume it catchs more information from the content step by step.
 
 
 <!-- <span style="color:blue">some *blue* text</span>. -->
