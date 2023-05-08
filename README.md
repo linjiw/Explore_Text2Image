@@ -1,6 +1,6 @@
 # Project Report: Test 2 Image Generating Task 🎨🖼️
 
-
+Author: Zhiyi Shi ([zhiyis](zhiyis@andrew.cmu.edu)), Linji Wang ([linjiw](linjiw@andrew.cmu.edu))
 
 ## Start with GigaGAN
 
