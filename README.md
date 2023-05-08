@@ -45,6 +45,12 @@ Then we added clip loss for training and observed the results. The generated ima
 
 ![drawing of a brown and black Pokemon 3](data/drawing%20of%20a%20brown%20and%20black%20Pokemon%20clip.png "drawing of a brown and black Pokemon with clip") **drawing of a brown and black Pokemon with clip loss**
 
+Besides the visual differences, the quantitative results also show that the clip loss did not work in our case, and even produce worse results.
+
+![LPIPS Results](./data/LPIPS.png "LPIPS")
+
+This experiment is done using [**Learned Perceptual Image Patch Similarity (LPIPS)**](https://github.com/richzhang/PerceptualSimilarity) for evaluate the simiarity in feature space.
+
 ### Conclusions in GigaGAN:
 
 1.	The effect of the image we generated is not good, which may be related to the selection of a hyperparameter and the size of the data. Firstly, choosing a smaller batch size can result in poor convergence of the entire training. Secondly, there are too many hyperparameters in this model, and we can only use a few tuning parameters due to our computing resources.
@@ -79,11 +85,11 @@ We began by implementing the **MinImagen** model using the resources provided by
 
 <!-- Another important feature of our implementation is the **classifier-free guidance** for text conditioning. This means that we don't need to rely on a separate classifier to guide the image generation process. -->
 
-### Dataset
+<!-- ### Dataset
 
 We used the [**HuggingFace lambdalabs/pokemon-blip-captions dataset**](https://huggingface.co/datasets/lambdalabs/pokemon-blip-captions)🐾 as the basis for our image generation task. We edited the dataloader and dataset functions to make them compatible with our implementation.
 
-![Pokemon Dataset](data/pokemon_data_set.png "Pokemon Dataset")
+![Pokemon Dataset](data/pokemon_data_set.png "Pokemon Dataset") -->
 
 ### Experimentation
 
